@@ -1,6 +1,6 @@
 # perplexity_clone
 
-A new Flutter project.
+<img width="2878" height="1550" alt="Image" src="https://github.com/user-attachments/assets/cd36781e-05ed-40f3-8849-982e3eaf4a1f" />
 
 ## Getting Started
 
