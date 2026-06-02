@@ -32,7 +32,7 @@ How it works:
 
 <img width="2878" height="1543" alt="Image" src="https://github.com/user-attachments/assets/7d4ee927-e083-4a8f-9a14-43c01b260d6b" />
 
-#AI Generates the Response
+# AI Generates the Response
 
 <img width="2878" height="1562" alt="Image" src="https://github.com/user-attachments/assets/325793f3-de61-4521-9ff9-85e16833c091" />
 
