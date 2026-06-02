@@ -1,24 +1,45 @@
 # Perplexity_clone
 
-I built this because I wanted to understand how AI search engines like 
-Perplexity actually work under the hood.
+I built this project to understand how AI-powered search engines like Perplexity work behind the scenes.
 
-You type a question. It searches the web. An LLM reads those results 
-and writes you an answer — streamed back word by word so it never 
-feels like you're just waiting for a page to load.
+The idea is simple:
+You ask a question → the app searches the web → an LLM reads the results → then generates a real-time AI response streamed word by word, making the experience feel fast and interactive instead of waiting for a full page reload.
 
-Flutter handles the UI (works on Android, iOS and Web), FastAPI runs 
-the backend, and WebSockets keep everything connected in real time. 
-It's a fun project and a pretty solid starting point if you want to 
-build something similar.
+The project is built with:
+
+Flutter — Cross-platform frontend for Android, iOS, and Web
+FastAPI — Backend API and AI orchestration
+WebSockets — Real-time streaming communication between client and server
+
+This started as a learning project, but it turned into a solid foundation for building modern AI search applications.
+
+Features
+AI-powered search experience
+Real-time streamed responses
+Web search integration
+Cross-platform Flutter UI
+Clean and responsive interface
+WebSocket-based communication
+Source references for generated answers
 
 How it works: 
 
-User Enters a Query
+# User Enters a Query
 <img width="2878" height="1559" alt="Image" src="https://github.com/user-attachments/assets/db41f026-dad5-442c-a6ab-b73b1099e079" />
-Loading State Appears
+# Loading State Appears
 <img width="2878" height="1543" alt="Image" src="https://github.com/user-attachments/assets/7d4ee927-e083-4a8f-9a14-43c01b260d6b" />
-AI Generates the Response
+#AI Generates the Response
 <img width="2878" height="1562" alt="Image" src="https://github.com/user-attachments/assets/325793f3-de61-4521-9ff9-85e16833c091" />
 
+# Running the Project
+# Frontend
+flutter pub get
+flutter run
+
+# Backend
+cd server
+python3 -m venv venv (To create venv folder)
+venv\Scripts\activate (To activate venv folder)
+pip install fastapi
+fastapi dev server/main.py (To run FastApi)
 
