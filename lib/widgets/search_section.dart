@@ -1,13 +1,27 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:perplexity_clone/pages/chat_page.dart';
+import 'package:perplexity_clone/services/chat_web_Service.dart';
 import 'package:perplexity_clone/theme/colors.dart';
 import 'package:perplexity_clone/widgets/search_bar_button.dart';
-import 'package:perplexity_clone/widgets/side_bar.dart';
 
-class SearchSection extends StatelessWidget {
+class SearchSection extends StatefulWidget {
   const SearchSection({super.key});
 
   @override
+  State<SearchSection> createState() => _SearchSectionState();
+}
+
+class _SearchSectionState extends State<SearchSection> {
+  final queryController = TextEditingController();
+
+  @override
+  @override
+  void dispose() {
+    
+    super.dispose();
+    queryController.dispose();
+  }
   Widget build(BuildContext context) {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
@@ -38,7 +52,7 @@ class SearchSection extends StatelessWidget {
                 
                 padding: const EdgeInsets.all(16),
                 child: TextField(
-                  
+                  controller: queryController,
                   decoration: InputDecoration(
                     isDense: true,
                     contentPadding: EdgeInsets.zero,
@@ -63,17 +77,23 @@ class SearchSection extends StatelessWidget {
                       text: 'Attach'
                     ),
                      const Spacer(),
-                     Container(
-                      padding: EdgeInsets.all(9),
-                      decoration:   BoxDecoration(
-                      color: AppColors.submitButton,
-                      borderRadius: BorderRadius.circular(40),
-                
-                      ),
-                      child: const Icon(Icons.arrow_forward,
-                      color: AppColors.background,
-                      size: 16,
-                      ),
+                     GestureDetector(
+                      onTap: () {
+                        ChatWebService().chat(queryController.text.trim());
+                        Navigator.of(context).push(MaterialPageRoute(builder: (context) => ChatPage(question: queryController.text.trim())));
+                      },
+                       child: Container(
+                        padding: EdgeInsets.all(9),
+                        decoration:   BoxDecoration(
+                        color: AppColors.submitButton,
+                        borderRadius: BorderRadius.circular(40),
+                                       
+                        ),
+                        child: const Icon(Icons.arrow_forward,
+                        color: AppColors.background,
+                        size: 16,
+                        ),
+                       ),
                      )
                   ],
                 ),

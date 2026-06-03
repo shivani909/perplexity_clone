@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:perplexity_clone/pages/chat_page.dart';
 import 'package:perplexity_clone/pages/home_page.dart';
 import 'package:perplexity_clone/theme/colors.dart';
 
@@ -14,15 +15,23 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
         scaffoldBackgroundColor: AppColors.background,
-      
-        textTheme: GoogleFonts.interTextTheme(ThemeData.dark().textTheme),
+
+        textTheme: GoogleFonts.interTextTheme(
+          ThemeData.dark().textTheme.copyWith(
+            bodyMedium: const TextStyle(
+              fontSize: 15,
+              color: AppColors.whiteColor,
+            ),
+          ),
+        ),
         colorScheme: ColorScheme.fromSeed(seedColor: AppColors.submitButton),
         useMaterial3: true,
       ),
-      home: const HomePage(),
+      home: HomePage()
     );
   }
 }
